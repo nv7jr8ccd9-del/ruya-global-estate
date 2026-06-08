@@ -374,6 +374,138 @@ html,body,input,textarea,select,button{
     font-size:38px!important;
   }
 }
+ /* ===== FINAL PREMIUM HOMEPAGE UPDATE ===== */
+
+/* Admin'i ziyaretçiden gizle */
+.nav button[data-page="admin"]{
+  display:none!important;
+}
+
+/* Üst menü daha temiz */
+.top{
+  border-bottom:1px solid rgba(215,179,74,.35)!important;
+}
+
+.logo{
+  width:42px!important;
+  height:42px!important;
+}
+
+.brand{
+  max-width:58vw!important;
+}
+
+/* Ana sayfa premium hero */
+#home{
+  padding-top:0!important;
+}
+
+#home .wrap:first-child{
+  width:100%!important;
+  max-width:none!important;
+}
+
+.homeIntro{
+  min-height:78vh!important;
+  padding:80px 24px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.82)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat!important;
+  border-bottom:1px solid rgba(215,179,74,.35)!important;
+}
+
+.homeIntro h1:empty::before{
+  content:"LUXURY REAL ESTATE & INVESTMENT OPPORTUNITIES";
+}
+
+.homeIntro p:empty::before{
+  content:"Premium villas, land and investment projects in Kocaali, Sakarya, Turkey.";
+}
+
+/* Broşür artık ilk kahraman alanı gibi durmasın */
+#homeGallery{
+  width:min(1120px,92vw)!important;
+  margin:34px auto 28px!important;
+  display:grid!important;
+  gap:18px!important;
+}
+
+#homeGallery img{
+  border-radius:22px!important;
+  border:1px solid rgba(215,179,74,.45)!important;
+}
+
+/* İlanlar premium kart */
+.grid{
+  gap:22px!important;
+}
+
+.card{
+  border:1px solid rgba(215,179,74,.36)!important;
+}
+
+.body{
+  padding:24px!important;
+}
+
+.card h3{
+  color:#fff8ea!important;
+}
+
+/* WhatsApp butonu daha şık */
+.floatcall{
+  right:18px!important;
+  bottom:24px!important;
+  background:#25d366!important;
+  border:4px solid rgba(255,255,255,.18)!important;
+}
+
+/* Mobil düzeltme */
+@media(max-width:430px){
+  .brandrow{
+    justify-content:flex-start!important;
+  }
+
+  .brand{
+    font-size:12px!important;
+    max-width:54vw!important;
+  }
+
+  .lang{
+    max-width:112px!important;
+  }
+
+  .logo{
+    width:38px!important;
+    height:38px!important;
+  }
+
+  .nav{
+    justify-content:center!important;
+  }
+
+  .nav button{
+    font-size:9.5px!important;
+  }
+
+  .homeIntro{
+    min-height:72vh!important;
+    padding:70px 18px!important;
+  }
+
+  .homeIntro h1{
+    font-size:42px!important;
+  }
+
+  .homeIntro p{
+    font-size:16px!important;
+  }
+}
 </style>
 </head>
 <body>
