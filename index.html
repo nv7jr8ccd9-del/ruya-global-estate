@@ -866,7 +866,41 @@ window.clearAllHomeBlocks=async function(){
   if(isAdmin) buildAdmin();
   alert('Anasayfa blokları silindi.');
 }
+window.addHomeBlock=async function(){
+  DATA.home=DATA.home||{};
+  DATA.home.blocks=DATA.home.blocks||[];
+  DATA.home.blocks.push({
+    id:uid(),
+    image:'',
+    title:emptyLangObj(''),
+    text:emptyLangObj('')
+  });
+  DATA.home._migratedToBlocks=true;
+  await saveSite(false);
+  renderAll();
+  if(isAdmin) buildAdmin();
+  alert('Yeni anasayfa bloğu eklendi.');
+}
 
+window.uploadHomeBlockImage=async function(i,inputId){
+  try{
+    DATA.home=DATA.home||{};
+    DATA.home.blocks=DATA.home.blocks||[];
+    if(!DATA.home.blocks[i]) return alert('Blok bulunamadı.');
+
+    let urls=await uploadFiles(inputId,'site/home/'+(DATA.home.blocks[i].id||i));
+    if(urls[0]){
+      DATA.home.blocks[i].image=urls[0];
+      DATA.home._migratedToBlocks=true;
+      await saveSite(false);
+      renderAll();
+      if(isAdmin) buildAdmin();
+      alert('Anasayfa resmi kaydedildi.');
+    }
+  }catch(e){
+    alert('Anasayfa resmi yükleme hatası: '+e.message);
+  }
+}
 function adminHomeImages(){
  getHomeBlocks();
  let html="<h2>Ana Sayfa Blokları: Resim + Başlık + Metin</h2>";
